@@ -1,0 +1,52 @@
+.project {
+    width: calc(100vw - 450px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.project-slider {
+    width: 180px;
+    height: 100vh;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow-y: scroll;
+}
+
+.project-img {
+    width: 120px;
+    height: 65px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.project-img.active img {
+    filter: grayscale(0);
+    transform: scale(1.3);
+}
+
+.project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
+.project-main {
+    width: 800px;
+}
+
+.project-main-img {
+    width: 800px;
+    height: 200px;
+}
+
+.project-main-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
