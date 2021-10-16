@@ -7,7 +7,7 @@ const Home = () => {
     const list2 = ["Flutter", "Typescript", "Figma"];
     const list3 = ["Html", "Css", "Scss"];
     return (<>
-        <Link className="nav-top" to="/">Home</Link>
+        <Link className="nav-top active" to="/">Home</Link>
         <div className="home">
         <div className="tagline">
             <h1>Full-Stack Developer</h1>

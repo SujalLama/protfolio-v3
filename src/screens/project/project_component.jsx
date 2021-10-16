@@ -1,69 +1,40 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState, useRef } from 'react'
 import './project_style.css';
 import {Link} from 'react-router-dom';
+import projects from '../../data/data';
 
-const projects = [
-    {
-        name: "Project 1",
-        description: "ni iajsdf aisd jijiasd fasdfijd asdfjasdfj",
-        img: "/assets/com.jpg"
-    },
-    {
-        name: "Project 2",
-        description: "ni iajsdf aisd jijiasd fasdfijd asdfjasdfj",
-        img: "/assets/com.jpg"
-    },
-    {
-        name: "Project 3",
-        description: "ni iajsdf aisd jijiasd fasdfijd asdfjasdfj",
-        img: "/assets/com.jpg"
-    },
-    {
-        name: "Project 4",
-        description: "ni iajsdf aisd jijiasd fasdfijd asdfjasdfj",
-        img: "/assets/com.jpg"
-    },
-    {
-        name: "Project 5",
-        description: "ni iajsdf aisd jijiasd fasdfijd asdfjasdfj",
-        img: "/assets/com.jpg"
-    },
-    {
-        name: "Project 6",
-        description: "ni iajsdf aisd jijiasd fasdfijd asdfjasdfj",
-        img: "/assets/com.jpg"
-    },
-    {
-        name: "Project 7",
-        description: "ni iajsdf aisd jijiasd fasdfijd asdfjasdfj",
-        img: "/assets/com.jpg"
-    },
-];
 const Project = () => {
-    const[selected, setSelected] = useState(3);
-
+    const[selected, setSelected] = useState(2);
+    const scrollRef = useRef(null);
     return (
         <>
         <Link className="nav-top" to="/">Home</Link>
-        <div className="project">
-            <div className="project-slider">
-         {
-             projects.map((item, index) => {
-                 return <div className={selected == index ? "project-img active" : "project-img"} onClick={() => setSelected(index)}>
-                     <img src={item.img} alt={item.name} />
-                 </div>
-             })
-         }   
-         </div>
-         <div className="project-main">
-             <div className="project-main-img">
-                 <img src={projects[selected].img} alt={projects[selected].name} />
-             </div>
-                 <h3>{projects[selected].name}</h3>
-                 <p>{projects[selected].description}</p>
-         </div>
+        <div className="project-wrapper">
+            <div className="project">
+                <i className="fa fa-arrow-up scroll-icon scroll-icon-top" onClick={() => scrollRef.current.scrollBy(0, -300)}></i>
+                    <div className="project-slider" ref={scrollRef}>
+                        {
+                            projects.map((item, index) => {
+                                return <div className={selected == index ? "project-img active" : "project-img"} onClick={() => setSelected(index)}>
+                                    <img src={item.img} alt={item.name} />
+                                </div>
+                            })
+                        }   
+                    </div>
+                <i className="fa fa-arrow-down scroll-icon scroll-icon-bottom" onClick={() => scrollRef.current.scrollBy(0, 300)}></i>
+                <div className="project-main">
+                    <div className="project-main-img">
+                        <img src={projects[selected].img} alt={projects[selected].name} />
+                    </div>
+                    <div className="project-details">
+                        <h3>{projects[selected].name}</h3>
+                        <p>{projects[selected].description}</p>
+                        <p>{projects[selected].description}</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <Link className="nav-bottom" to="/me">About Me</Link>
+        <Link className="nav-bottom" to="/me">Profile</Link>
         </>
     )
 }

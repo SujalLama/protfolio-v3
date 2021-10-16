@@ -66,51 +66,63 @@ body {
 body::before {
   content: "";
   border-radius: 25px;
-  width: 500px;
-  height: 500px;
+  width: 300px;
+  height: 300px;
   background-color: var(--secondaryColor);
   position: absolute;
   transform: rotate(10deg);
-  top: -360px;
-  left: -300px;
+  top: -180px;
+  left: -150px;
 }
 
 body::after {
   content: "";
-  width: 500px;
-  height: 500px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
   background-color: var(--primaryColor);
   position: absolute;
-  bottom: -300px;
-  right: -300px;
+  bottom: -150px;
+  right: -150px;
 }
 
 .nav-top {
   position: absolute;
-  top: 50px;
-  left: 50px;
+  top: 30px;
+  left: 30px;
   text-decoration: none;
   color: #fff;
   cursor: pointer;
 }
 
+.nav-top.active {
+  color: #000;
+  font-weight: bold;
+}
+
 .nav-top:hover {
   color: var(--dark);
+  font-weight: bold;
 }
 
 .nav-bottom {
   position: absolute;
-  bottom: 50px;
-  right: 50px;
+  bottom: 30px;
+  right: 30px;
   text-decoration: none;
   color: #fff;
   z-index: 100;
   cursor: pointer;
 }
 
+.nav-bottom.active {
+  color: #000;
+  font-weight: bold;
+}
+
 .nav-bottom:hover {
   color: var(--dark);
+  font-weight: bold;
 }
 
 /* width */
