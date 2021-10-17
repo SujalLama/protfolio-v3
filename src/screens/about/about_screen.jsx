@@ -17,7 +17,7 @@ const About = () => {
             <ul className="about-list">
                 <li className="about-list-item">lsujal41@gmail.com <span><i className="fa fa-envelope"></i></span></li>
                 <li className="about-list-item">live:.cid.5108322433e03ee8 <span><i className="fa fa-skype"></i></span></li>
-                <li className="about-list-item">+977 9818575922 <span><i className="fa fa-mobile"></i></span></li>
+                <li className="about-list-item">+977 9818575922 <span><i className="fa fa-phone"></i></span></li>
             </ul>
          </div>
         </div>
